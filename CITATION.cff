@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata below."
+title: "South America Trip Planning Index 2026"
+type: dataset
+version: "1.1"
+date-released: 2026-08-02
+authors:
+  - family-names: "Abdou"
+    given-names: "Ahmed"
+url: "https://visaadvisor.ai/south-america-travel-planning-index-2026/"
+repository-code: "https://github.com/ahmedabdouelhakim-art/south-america-trip-planning-index-2026"
+license: CC-BY-4.0
+keywords:
+  - South America
+  - trip planning
+  - travel dataset
+  - official sources
+  - tourism
+

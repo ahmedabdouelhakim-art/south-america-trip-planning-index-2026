@@ -1,0 +1,58 @@
+South America Travel Planning Index 2026 — Data Package Metadata
+Version: 1.1
+Verified: 2026-08-02
+Publisher: VisaAdvisor.ai
+Editor: Ahmed Abdou
+Canonical page: https://visaadvisor.ai/south-america-travel-planning-index-2026/
+
+FILES
+1. south-america-trip-planning-dataset-2026-v1-1.csv
+   Rows: 12 sovereign South American countries
+   Size: 9,628 bytes
+   SHA-256: 5a050c4eff696ce9b72697fdb91d48e6fcde2d1080d50a3bcc9b755922e44fc4
+
+2. south-america-trip-planning-sources-2026-v1-1.csv
+   Rows: 44 official-source records
+   Size: 17,674 bytes
+   SHA-256: ded9d23acd511e3681f6908c35d77488699ac470bbf2ef46a3ba221572d40432
+
+LICENSE AND ATTRIBUTION
+VisaAdvisor's selection, structure and original editorial fields are released under CC BY 4.0:
+https://creativecommons.org/licenses/by/4.0/
+
+Linked government, tourism, protected-area and state-reporting material remains subject to the original publisher's terms. Reusers must not imply that an authority endorses VisaAdvisor's editorial suggested days, route intensity or experience selection.
+
+Suggested citation:
+VisaAdvisor.ai, “South America Travel Planning Index 2026: 12-Country Open Dataset,” version 1.1, verified 2 August 2026, https://visaadvisor.ai/south-america-travel-planning-index-2026/
+
+DATASET FIELDS
+version — package version.
+checked_on — last full verification date for this release.
+next_review_due — scheduled review date; operational alerts use a shorter cycle.
+country, iso2 — sovereign-state name and ISO 3166-1 alpha-2 code.
+suggested_days_min, suggested_days_max, buffer_days — VisaAdvisor editorial planning fields, not government recommendations.
+gateway_city, gateway_iata_codes, gateway_note — source-informed planning gateway fields; empty gateway_source_ids indicate that the current 44-record registry does not yet contain a dedicated source for the gateway claim.
+route_intensity_editorial — enum: Moderate | Moderate-High | High | Expedition.
+seasonality_note — compressed official-source synthesis; regional variation still applies.
+signature_experience_1, signature_experience_2 — editorial selections; experience_source_ids may be empty where the current registry lacks a dedicated evidence page.
+official_tourism_url, official_entry_url — direct official checks.
+status — reviewed or provisional_alert.
+operational_note — time-sensitive or planning qualification.
+seasonality_source_ids, gateway_source_ids, experience_source_ids, tourism_source_ids, entry_source_id, operational_alert_source_ids — stable links to the source registry. Multiple IDs are separated with a vertical bar (|); an empty field means no dedicated source is claimed.
+canonical_dataset_url, license — durable page and reuse terms.
+
+SOURCE REGISTRY FIELDS
+source_id — stable ID matching ^[A-Z]{2}-[0-9]{2}$; IDs are never reused.
+field_type — enum: tourism_portal | seasonality | gateway | entry | experience | operational_alert.
+field_supported — human-readable scope of the evidence.
+source_organization, source_type, url — publisher identity, authority class and exact page.
+checked_on, next_review_due, time_sensitivity — review controls.
+note — concise explanation of what the page supports and any limitation.
+
+METHOD RULES
+- The index is a planning aid, not a safety ranking or universal best-country score.
+- Entry rights must be checked for the traveller's nationality, passport, purpose and transit route.
+- Official-source synthesis and VisaAdvisor editorial judgment are labelled separately.
+- A blank source-ID field is intentional and must not be filled by inference.
+- Operational alerts are historical/time-sensitive evidence and must be rechecked against the airport, airline or current NOTAM before booking.
+- Corrections supported by an official source can be sent to help@visaadvisor.ai.
