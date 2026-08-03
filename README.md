@@ -2,9 +2,11 @@
 
 **Version 1.1 · Verified 2 August 2026**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21765168.svg)](https://doi.org/10.5281/zenodo.21765168)
+
 An open, source-linked planning dataset covering all **12 sovereign South American countries**. It combines regional seasonality, suggested trip length, gateway notes, route intensity, signature experiences, and official entry-check links with a registry of **44 official-source records**.
 
-[View the live index and methodology](https://visaadvisor.ai/south-america-travel-planning-index-2026/)
+[View the live index and methodology](https://visaadvisor.ai/south-america-travel-planning-index-2026/) · [Cite Version 1.1 on Zenodo](https://doi.org/10.5281/zenodo.21765168) · [All versions](https://doi.org/10.5281/zenodo.21765167)
 
 ## Data package
 
@@ -27,7 +29,7 @@ Use the country file for comparison and the source registry to trace individual 
 
 Suggested citation:
 
-> VisaAdvisor.ai, “South America Travel Planning Index 2026: 12-Country Open Dataset,” version 1.1, verified 2 August 2026, https://visaadvisor.ai/south-america-travel-planning-index-2026/
+> Ahmed Abdou, “South America Travel Planning Index 2026: 12-Country Open Dataset,” version 1.1, VisaAdvisor.ai, verified 2 August 2026. https://doi.org/10.5281/zenodo.21765168
 
 ## License
 

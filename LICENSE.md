@@ -12,9 +12,8 @@ Suggested attribution:
 
 > Ahmed Abdou, *South America Trip Planning Index 2026*, Version 1.1,
 > VisaAdvisor.ai, 2 August 2026.
-> https://visaadvisor.ai/south-america-travel-planning-index-2026/
+> https://doi.org/10.5281/zenodo.21765168
 
 This license applies only to VisaAdvisor.ai's original compilation, structure
 and documentation. It does not relicense third-party material or the content of
 linked official sources, which remains subject to its respective owners' terms.
-
