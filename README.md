@@ -1,42 +1,101 @@
-# South America Travel Planning Index 2026
-
-**Version 1.1 · Verified 2 August 2026**
+# South America Trip Planning Index 2026
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21765168.svg)](https://doi.org/10.5281/zenodo.21765168)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-An open, source-linked planning dataset covering all **12 sovereign South American countries**. It combines regional seasonality, suggested trip length, gateway notes, route intensity, signature experiences, and official entry-check links with a registry of **44 official-source records**.
+![South America Trip Planning Index 2026 cover](south-america-index-social-cover-v1-1.png)
 
-[View the live index and methodology](https://visaadvisor.ai/south-america-travel-planning-index-2026/) · [Cite Version 1.1 on Zenodo](https://doi.org/10.5281/zenodo.21765168) · [All versions](https://doi.org/10.5281/zenodo.21765167)
+An open, source-linked planning dataset covering all **12 sovereign South
+American countries**. Version 1.1 combines regional seasonality, suggested trip
+length, gateway notes, route intensity, signature experiences, and official
+tourism and entry-check links with a registry of **44 official-source records**.
 
-## Data package
+- **Release:** 1.1
+- **Verified:** 2 August 2026
+- **Version DOI:** [10.5281/zenodo.21765168](https://doi.org/10.5281/zenodo.21765168)
+- **Concept DOI:** [10.5281/zenodo.21765167](https://doi.org/10.5281/zenodo.21765167)
+- **Canonical page and methodology:** [VisaAdvisor.ai](https://visaadvisor.ai/south-america-travel-planning-index-2026/)
 
-The Version 1.1 release contains three files:
+Use the **version DOI** when citing this exact Version 1.1 release. Use the
+**concept DOI** when referring to the dataset as a continuously maintained work
+across versions.
 
-- [`south-america-trip-planning-dataset-2026-v1-1.csv`](https://visaadvisor.ai/wp-content/uploads/2026/08/south-america-trip-planning-dataset-2026-v1-1.csv) — 12 normalized country records with planning fields and source IDs.
-- [`south-america-trip-planning-sources-2026-v1-1.csv`](https://visaadvisor.ai/wp-content/uploads/2026/08/south-america-trip-planning-sources-2026-v1-1.csv) — 44 official-source records with provenance, evidence scope, and review controls.
-- [`south-america-trip-planning-metadata-2026-v1-1.txt`](https://visaadvisor.ai/wp-content/uploads/2026/08/south-america-trip-planning-metadata-2026-v1-1.txt) — citation, checksums, field definitions, enums, license scope, and maintenance rules.
+## Repository contents
 
-## Four findings
+| File | Purpose |
+|---|---|
+| [`south-america-trip-planning-dataset-2026-v1-1.csv`](south-america-trip-planning-dataset-2026-v1-1.csv) | 12 normalized country records with planning fields and stable source IDs. |
+| [`south-america-trip-planning-sources-2026-v1-1.csv`](south-america-trip-planning-sources-2026-v1-1.csv) | 44 source records with provenance, evidence scope, review dates, and sensitivity flags. |
+| [`south-america-trip-planning-metadata-2026-v1-1.txt`](south-america-trip-planning-metadata-2026-v1-1.txt) | Field definitions, enums, methodology, release hashes, license scope, and maintenance rules. |
+| [`CITATION.cff`](CITATION.cff) | Machine-readable citation metadata for GitHub and reference tools. |
+| [`LICENSE.md`](LICENSE.md) | CC BY 4.0 terms and the boundary around linked third-party material. |
+| [`CHANGELOG.md`](CHANGELOG.md) | Release history and documentation changes. |
+| [`checksums.sha256`](checksums.sha256) | SHA-256 integrity manifest for the release files. |
+| [`south-america-index-social-cover-v1-1.png`](south-america-index-social-cover-v1-1.png) | 1200 x 630 release cover. |
 
-- **Brazil has no single national travel season:** the Amazon, northeast, Pantanal, and southern routes follow materially different weather patterns.
-- **Land borders matter in Paraguay:** looking only at its main airport misses important road-arrival corridors.
-- **Guyana and Suriname are logistics-led:** interior travel often depends on boats, light aircraft, or specialist local operators.
-- **Large countries reward regional restraint:** first trips to Argentina, Brazil, Chile, and Peru are usually more meaningful when limited to one or two connected regions.
+## Quick start
 
-## Use and citation
+The country dataset and source registry join through the source-ID columns.
+Multiple IDs in one country field are separated by a vertical bar (`|`). Empty
+source-ID fields are intentional and must not be filled by inference.
 
-Use the country file for comparison and the source registry to trace individual claims. Suggested trip lengths, route intensity, gateway framing, and experience selections are VisaAdvisor editorial judgments—not government recommendations. Recheck entry rules and time-sensitive transport information with the linked authorities before booking.
+```python
+import pandas as pd
 
-Suggested citation:
+countries = pd.read_csv("south-america-trip-planning-dataset-2026-v1-1.csv")
+sources = pd.read_csv("south-america-trip-planning-sources-2026-v1-1.csv")
 
-> Ahmed Abdou, “South America Travel Planning Index 2026: 12-Country Open Dataset,” version 1.1, VisaAdvisor.ai, verified 2 August 2026. https://doi.org/10.5281/zenodo.21765168
+print(countries[["country", "suggested_days_min", "suggested_days_max"]])
+print(sources.groupby("field_type").size())
+```
+
+## What the data can and cannot tell you
+
+The dataset is a planning aid, not a safety ranking, a universal best-country
+score, or a statement of entry entitlement. Suggested trip lengths, route
+intensity, gateway framing, and signature experiences are VisaAdvisor editorial
+judgments rather than government recommendations.
+
+Entry rules depend on the traveller's nationality, passport, purpose, and
+transit route. Recheck entry requirements and time-sensitive transport
+information with the linked authorities before booking. Operational alerts are
+historical or time-sensitive evidence and must be checked again against the
+relevant airport, airline, authority, or current NOTAM.
+
+## Data integrity
+
+Version 1.1 contains:
+
+- 12 country rows and 12 unique ISO 3166-1 alpha-2 codes;
+- 44 unique source IDs matching the `AA-00` pattern;
+- 64 country-to-source reference edges;
+- no missing, duplicate, or cross-country source references; and
+- HTTPS URLs for every record in the source registry.
+
+Verify the mirrored files from the repository root with:
+
+```text
+sha256sum -c checksums.sha256
+```
+
+## Citation
+
+> Ahmed Abdou, *South America Trip Planning Index 2026: 12-Country Open
+> Dataset*, Version 1.1, VisaAdvisor.ai, 2 August 2026.
+> https://doi.org/10.5281/zenodo.21765168
+
+Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).
 
 ## License
 
-VisaAdvisor's selection, structure, and original editorial fields are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Reuse requires clear attribution to VisaAdvisor.ai and a link to the canonical page. Linked government, tourism, protected-area, and state-reporting material remains subject to each original publisher's terms; the CC BY 4.0 license does not relicense that third-party material.
+VisaAdvisor.ai's original compilation, structure, and documentation are
+released under the [Creative Commons Attribution 4.0 International
+License](https://creativecommons.org/licenses/by/4.0/). Linked third-party
+material remains subject to each original publisher's terms and is not
+relicensed by this repository. See [`LICENSE.md`](LICENSE.md).
 
 ## Author and corrections
 
-Edited by [Ahmed Abdou](https://visaadvisor.ai/ahmed-abdou/), travel writer and researcher at VisaAdvisor.ai.
+Edited by **Ahmed Abdou**, travel writer and researcher at VisaAdvisor.ai.
 
 Corrections supported by an official source: [help@visaadvisor.ai](mailto:help@visaadvisor.ai)

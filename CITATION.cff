@@ -1,20 +1,33 @@
 cff-version: 1.2.0
-message: "If you use this dataset, please cite it using the metadata below."
-title: "South America Trip Planning Index 2026"
+message: "If you use this dataset, please cite the exact release using its version DOI."
+title: "South America Trip Planning Index 2026: 12-Country Open Dataset"
 type: dataset
 version: "1.1"
+doi: "10.5281/zenodo.21765168"
 date-released: 2026-08-02
 authors:
   - family-names: "Abdou"
     given-names: "Ahmed"
-doi: "10.5281/zenodo.21765168"
+    affiliation: "VisaAdvisor.ai"
+abstract: >-
+  An open, source-linked trip-planning dataset covering all 12 sovereign South
+  American countries. Version 1.1 provides normalized country planning fields
+  and a registry of 44 official-source records with stable identifiers,
+  evidence scope, review dates, and maintenance controls.
 url: "https://visaadvisor.ai/south-america-travel-planning-index-2026/"
 repository-code: "https://github.com/ahmedabdouelhakim-art/south-america-trip-planning-index-2026"
-repository-artifact: "https://github.com/ahmedabdouelhakim-art/south-america-trip-planning-index-2026/releases/tag/v1.1"
 license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21765167"
+    description: "Concept DOI for all versions of the dataset"
 keywords:
   - South America
-  - trip planning
-  - travel dataset
-  - official sources
+  - travel planning
   - tourism
+  - open data
+  - official sources
+  - destination planning
+  - seasonality
+  - travel logistics
+  - travel research
